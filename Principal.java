@@ -1,27 +1,52 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Principal{
 
      public static void main(String[] args){
-
-        Equipamento equipamentos[] = new Equipamento[5];
-        Equipamento equipamento = new Equipamento();
         Telacadastro telacadastro = new Telacadastro();
 
+        //Declaração array unidimensional
+        //Equipamento equipamentos[] = new Equipamento[5];
+        //declaração array matriz
+        //Equipamento equipamentos[][] = new Equipamento[2][2];
+        //declaração array list
+        ArrayList<Equipamento> arrayListEquipamento = new ArrayList<>();
+        Scanner continua = new Scanner(System.in);
+        String result = "s";
         telacadastro.desenhatelacadastro();
-        equipamento.setNome(telacadastro.getNome());
-
-        for(int i = 0; i < 5; i++){
+       /*  for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 2; j++){*/
+           while ((result.equals("s")) || (result.equals("S"))) {
+            
+           } {    
+            Equipamento equipamento = new Equipamento();
+            arrayListEquipamento = new ArrayList<>();
             telacadastro.desenhatelacadastro();
+            equipamento.setId(telacadastro.getId());
             equipamento.setNome(telacadastro.getNome());
             equipamento.setModelo(telacadastro.getModelo());
             equipamento.setAtivo(telacadastro.getAtivo());
             equipamento.setDataaquisicao(telacadastro.getDataAquisicao());
-
-            equipamentos[i] = equipamento;
+            arrayListEquipamento.add(equipamento);
+            System.out.print("\n Continua [S/N]:");
+            result = continua.nextLine();
         }
 
-        for (Equipamento listaEquipamento : equipamentos){
-            System.out.println(listaEquipamento + "\n");
+        for (Equipamento equipamento : arrayListEquipamento){
+            System.out.println("\n"+equipamento + "\n");
+        }
+    }
+
+
+           /* for (int i=0; i < 2; i++){
+                for(int j = 0; j < 2; j++){
+                     System.out.println(equipamentos[0][0] + "\n");
+
+                }
+            } */
+
+       /* for (Equipamento listaEquipamento : equipamentos){
         }
         equipamento.setNome("Painel de controle");
         equipamento.setModelo("Modelo Lunar");
@@ -38,5 +63,5 @@ public class Principal{
         for (Equipamento equi : equipamentos) {
             System.out.println(equi + "\n");
         }
+    }*/
     }
-}
